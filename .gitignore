@@ -1,0 +1,27 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+/FaLinksPropertyEditor.Web/.vs
+/FaLinksPropertyEditor/obj
+/FaLinksPropertyEditor/bin
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/App_Data/Logs
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/App_Data/Models
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/App_Data/packages
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/App_Data/TEMP
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/bin
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/obj
+/FaLinksPropertyEditor.Web/FaLinksPropertyEditor.Web/Umbraco
+/FaLinksPropertyEditor.Web/packages
+/.vs
+/FaLinksPropertyEditor.Web/App_Data/Logs
+/FaLinksPropertyEditor.Web/App_Data/Models
+/FaLinksPropertyEditor.Web/App_Data/packages
+/FaLinksPropertyEditor.Web/App_Data/TEMP/ClientDependency
+/FaLinksPropertyEditor.Web/App_Data/TEMP/DistCache
+/FaLinksPropertyEditor.Web/App_Data/TEMP
+/FaLinksPropertyEditor.Web/bin
+/FaLinksPropertyEditor.Web/obj/Debug
+/FaLinksPropertyEditor.Web/Umbraco
+/packages
+/FaLinksPropertyEditor.Web/App_Plugins/FaLinksPropertyEditor
+/FaLinksPropertyEditor/Properties/AssemblyInfo.cs
