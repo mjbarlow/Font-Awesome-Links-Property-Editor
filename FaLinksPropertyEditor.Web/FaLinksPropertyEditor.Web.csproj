@@ -393,11 +393,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.picker.controller.js" />
-    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.directives.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.propertyeditor.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
@@ -443,8 +444,8 @@
     <Content Include="config\serilog.config" />
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -518,7 +519,7 @@
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /S /D "$(SolutionDir)\OptionButtonsPropertyEditor\App_Plugins\*" "$(ProjectDir)\App_Plugins"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y /S /D "$(SolutionDir)\FaLinksPropertyEditor\App_Plugins\*" "$(ProjectDir)\App_Plugins"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -124,6 +124,15 @@
     margin-right: 15px;
 }
 
+.list-view-falink__icon-view-wide {
+    flex: 0 1 30%;
+}
+
+.list-view-falink__icon-view-wide label {
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
 .list-view-falink__dropdown {
     flex: 0 1 20%;
 }

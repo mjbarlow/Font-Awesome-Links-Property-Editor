@@ -23,7 +23,7 @@
                         <umb-load-indicator ng-if="model.loading"></umb-load-indicator>
                         <div class="umb-control-group" ng-show="!model.loading && (model.results|filter:{terms:model.search}).length > 0">
                             <ul class="umb-iconpicker">
-                                <li ng-repeat="result in model.results | filter:{terms:model.search}" class="umb-iconpicker-item" fade-in>
+                                <li ng-repeat="result in model.results | filter:{terms:model.search}" class="umb-iconpicker-item">
                                     <a href="#" title="{{result.label}}" ng-click="submit(result)" prevent-default>
                                         <i class="fa-large" ng-bind-html="trustAsHtml(result.svg)"></i>
                                     </a>
