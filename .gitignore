@@ -25,3 +25,5 @@
 /packages
 /FaLinksPropertyEditor.Web/App_Plugins/FaLinksPropertyEditor
 /FaLinksPropertyEditor/Properties/AssemblyInfo.cs
+FaLinksPropertyEditor.Web/App_Data/
+FaLinksPropertyEditor.Web/Media/created-packages/
