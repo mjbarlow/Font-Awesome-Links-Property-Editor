@@ -1,20 +1,11 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using FaLinksPropertyEditor.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Core;
-using Umbraco.Core.Logging;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 using Umbraco.Web.Models;
-using Umbraco.Web.PropertyEditors;
-using System.Runtime.Serialization;
-using Umbraco.Core.Models;
-using Umbraco.Core.Models.Editors;
-using Umbraco.Core.Models.Entities;
-using Umbraco.Core.Services;
-using Umbraco.Web.Models.ContentEditing;
 using Umbraco.Web.PublishedCache;
 
 
@@ -102,64 +93,5 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
             }
             return faLinks;
         }
-    }
-
-    public partial class FaLinkDto
-    {
-        [JsonProperty("primaryClass")]
-        public string PrimaryClass { get; set; }
-
-        [JsonProperty("secondaryClass")]
-        public string SecondaryClass { get; set; }
-
-        [JsonProperty("className")]
-        public string ClassName { get; set; }
-
-        [JsonProperty("svg")]
-        public string Svg { get; set; }
-
-        [JsonProperty("label")]
-        public string Label { get; set; }
-
-        [JsonProperty("link")]
-        public LinkDto[] Link { get; set; }
-    }
-
-    public partial class FaLink
-    {
-        public string PrimaryClass { get; set; }
-        public string SecondaryClass { get; set; }
-        public string ClassName { get; set; }
-        public string Svg { get; set; }
-        public string Label { get; set; }
-        public Link Link { get; set; }
-
-        public FaLink(FaLinkDto faLinkDto, List<Link> links)
-        {
-            PrimaryClass = faLinkDto.PrimaryClass;
-            SecondaryClass = faLinkDto.SecondaryClass;
-            ClassName = faLinkDto.ClassName;
-            Svg = faLinkDto.Svg;
-            Label = faLinkDto.Label;
-            Link = links.FirstOrDefault();
-        }
-    }
-    
-    public partial class LinkDto
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("target")]
-        public string Target { get; set; }
-
-        [JsonProperty("udi")]
-        public GuidUdi Udi { get; set; }
-
-        [JsonProperty("url")]
-        public string Url { get; set; }
-
-        [JsonProperty("queryString")]
-        public string QueryString { get; set; }
     }
 }

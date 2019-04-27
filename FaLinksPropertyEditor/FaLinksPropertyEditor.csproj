@@ -142,6 +142,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FaLink.cs" />
+    <Compile Include="Models\LinkDto.cs" />
+    <Compile Include="Models\FaLinkDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyValueConverters\FaLinksPropertyValueConverter.cs" />
   </ItemGroup>
