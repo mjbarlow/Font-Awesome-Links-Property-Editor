@@ -153,7 +153,34 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         };
         editorService.linkPicker(linkPicker);
     };
- 
+
+    // Validation
+
+    $scope.$watch(
+        function () {
+            return $scope.model.value.length;
+        },
+        function () {
+            
+            if ($scope.model.config && $scope.model.config.minNumber && parseInt($scope.model.config.minNumber) > $scope.model.value.length) {
+                $scope.faLinksForm.minCount.$setValidity("minCount", false);
+            }
+            else {
+                $scope.faLinksForm.minCount.$setValidity("minCount", true);
+            }
+
+            if ($scope.model.config && $scope.model.config.maxNumber && parseInt($scope.model.config.maxNumber) < $scope.model.value.length) {
+                $scope.faLinksForm.maxCount.$setValidity("maxCount", false);
+            }
+            else {
+                $scope.faLinksForm.maxCount.$setValidity("maxCount", true);
+            }
+            $scope.sortableOptions.disabled = $scope.model.value.length === 1;
+        }
+    );
+
+
+
     $scope.removeLink = function (item) {
         item.link = [];
     };

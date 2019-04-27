@@ -7,6 +7,7 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
     vm.hidePrompt = hidePrompt;
     vm.remove = remove;
 
+
     // FaLink Row Functions
     function add() {
         var item = {
@@ -29,14 +30,15 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
         $scope.model.value.splice($index, 1);
     }
 
-    $scope.sortableOptions = {
+    let sortableOptions = {
         distance: 10,
         tolerance: 'pointer',
         opacity: 0.7,
         scroll: true,
         cursor: 'move',
-        handle: ".list-view-layout__sort-handle"
+        handle: '> .list-view-falink__sort-handle'
     };
+    vm.sortableOptions = sortableOptions;
 
     // Icon Picker
     if (!$scope.model.value) {
@@ -70,6 +72,31 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
 
     // Render svg
     $scope.trustAsHtml = $sce.trustAsHtml;
+
+    $scope.$watch(
+        function () {
+            return $scope.model.value.length;
+        },
+        function () {
+
+            if ($scope.model.config && $scope.model.config.minNumber && parseInt($scope.model.config.minNumber) > $scope.model.value.length) {
+                $scope.faIconForm.minCount.$setValidity("minCount", false);
+            }
+            else {
+                $scope.faIconForm.minCount.$setValidity("minCount", true);
+            }
+
+            if ($scope.model.config && $scope.model.config.maxNumber && parseInt($scope.model.config.maxNumber) < $scope.model.value.length) {
+                $scope.faIconForm.maxCount.$setValidity("maxCount", false);
+            }
+            else {
+                $scope.faIconForm.maxCount.$setValidity("maxCount", true);
+            }
+            vm.sortableOptions.disabled = $scope.model.value.length === 1;
+            if ($scope.model.value.length === 1) {
+            }
+        }
+    );
 
 }
 angular.module('umbraco').controller("FaIcon.PropertyEditor.Controller", faIconPropertyEditorController);

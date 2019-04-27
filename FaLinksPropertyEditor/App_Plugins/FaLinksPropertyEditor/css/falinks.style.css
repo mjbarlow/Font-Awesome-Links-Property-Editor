@@ -24,11 +24,15 @@
     background: #f3f3f5;
     margin-bottom: 1px;
 }
+.ui-sortable-disabled .list-view-falink__sort-handle { 
+    cursor: default;
+}
 
 .list-view-falink__sort-handle {
     font-size: 14px;
     color: #d8d7d9;
     margin-right: 15px;
+    cursor: move;
 }
 
 .list-view-falink__icon-add,
