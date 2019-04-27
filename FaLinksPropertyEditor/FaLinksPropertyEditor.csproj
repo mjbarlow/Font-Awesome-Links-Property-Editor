@@ -142,6 +142,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\FaLinksConfiguration.cs" />
     <Compile Include="Models\FaLink.cs" />
     <Compile Include="Models\LinkDto.cs" />
     <Compile Include="Models\FaLinkDto.cs" />

@@ -1,11 +1,8 @@
-﻿using System;
+﻿using FaLinksPropertyEditor.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Umbraco.Web.Models;
 using Umbraco.Web;
-using FaLinksPropertyEditor.PropertyValueConverters;
+using Umbraco.Web.Models;
 
 namespace FaLinksPropertyEditor.Web.Controllers
 {

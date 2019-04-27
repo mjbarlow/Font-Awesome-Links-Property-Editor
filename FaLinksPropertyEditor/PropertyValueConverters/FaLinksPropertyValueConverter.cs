@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FaLinksPropertyEditor.Configuration;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 using Umbraco.Web.Models;
@@ -36,7 +37,10 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         /// </summary>
         /// <param name="propertyType">The property type.</param>
         /// <returns>The CLR type of values returned by the converter.</returns>
-        public override Type GetPropertyValueType(PublishedPropertyType propertyType) => typeof(IEnumerable<FaLink>);
+        public override Type GetPropertyValueType(PublishedPropertyType propertyType)
+            => propertyType.DataType.ConfigurationAs<FaLinksConfiguration>().MaxNumber == 1 ?
+                typeof(FaLink) :
+                typeof(IEnumerable<FaLink>);
 
         public override PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType) =>
             PropertyCacheLevel.Snapshot;
@@ -49,9 +53,14 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         public override object ConvertIntermediateToObject(IPublishedElement owner, PublishedPropertyType propertyType,
             PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
         {
-            //todo: probably a better way of doing this
-            var faLinkDtos = JsonConvert.DeserializeObject<IEnumerable<FaLinkDto>>(inter.ToString()).ToList();
+            var maxNumber = propertyType.DataType.ConfigurationAs<FaLinksConfiguration>().MaxNumber;
+            if (inter == null)
+            {
+                return maxNumber == 1 ? null : Enumerable.Empty<Link>();
+            }
             var faLinks = new List<FaLink>();
+            var faLinkDtos = JsonConvert.DeserializeObject<IEnumerable<FaLinkDto>>(inter.ToString()).ToList();
+        
             foreach (var faLinkDto in faLinkDtos)
             {
                 var links = new List<Link>();
@@ -91,6 +100,8 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
                 }
                 faLinks.Add(new FaLink(faLinkDto,links));
             }
+            if (maxNumber == 1) return faLinks.FirstOrDefault();
+            if (maxNumber > 0) return faLinks.Take(maxNumber);
             return faLinks;
         }
     }
