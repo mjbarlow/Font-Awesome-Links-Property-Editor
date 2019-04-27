@@ -12,6 +12,18 @@
 		prevalues: {
 			   "fields": [
 				  {
+				  	"label": "Minimum number of items",
+					"description": "",
+					"key": "minNumber",
+					"view": "number"
+				  },
+				    {
+				  	"label": "Maximum number of items",
+					"description": "",
+					"key": "maxNumber",
+					"view": "number"
+				  },
+				  {
 					"label": "Primary Class Dropdown",
 					"description": "Add key/value pairs for primary class dropdown",
 					"key": "primaryClassItems",
@@ -34,6 +46,22 @@
 		editor: {
 			valueType: "TEXT",
 			view: "~/App_Plugins/FaLinksPropertyEditor/faicon.propertyeditor.html"
+		},
+		prevalues: {
+			   "fields": [
+				  {
+				  	"label": "Minimum number of items",
+					"description": "",
+					"key": "minNumber",
+					"view": "number"
+				  },
+				    {
+				  	"label": "Maximum number of items",
+					"description": "",
+					"key": "maxNumber",
+					"view": "number"
+				  }
+			   ]
 		}
 	}
 	],

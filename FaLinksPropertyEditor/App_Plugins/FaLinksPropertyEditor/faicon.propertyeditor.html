@@ -30,7 +30,34 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <a href="" class="list-view-add-layout" ng-click="vm.add()">Add</a>
+        </div>
+        <a href="" class="list-view-add-layout" ng-click="vm.add()">Add</a>
+        <div class="umb-contentpicker__min-max-help">
+            <!-- Both min and max items -->
+            <span ng-if="model.config.minNumber && model.config.maxNumber && model.config.minNumber !== model.config.maxNumber">
+                <span ng-if="model.value.length < model.config.maxNumber">Add between {{model.config.minNumber}} and {{model.config.maxNumber}} items</span>
+                <span ng-if="model.value.length > model.config.maxNumber">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumber}} <localize key="validation_itemsSelected"> items selected</localize>
+                </span>
+            </span>
+            <!-- Equal min and max -->
+            <span ng-if="model.config.minNumber && model.config.maxNumber && model.config.minNumber === model.config.maxNumber">
+                <span ng-if="model.value.length < model.config.maxNumber">Add {{model.config.minNumber - model.value.length}} item(s)</span>
+                <span ng-if="model.value.length > model.config.maxNumber">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumber}} <localize key="validation_itemsSelected"> items selected</localize>
+                </span>
+            </span>
+            <!-- Only max -->
+            <span ng-if="!model.config.minNumber && model.config.maxNumber">
+                <span ng-if="model.value.length < model.config.maxNumber">Add up to {{model.config.maxNumber}} items</span>
+                <span ng-if="model.valye.length > model.config.maxNumber">
+                    <localize key="validation_maxCount">You can only have</localize> {{model.config.maxNumber}} <localize key="validation_itemsSelected">items selected</localize>
+                </span>
+            </span>
+            <!-- Only min -->
+            <span ng-if="model.config.minNumber && !model.config.maxNumber && model.value.length < model.config.minNumber">
+                Add at least {{model.config.minNumber}} item(s)
+            </span>
+        </div>
     </div>
 </div>
