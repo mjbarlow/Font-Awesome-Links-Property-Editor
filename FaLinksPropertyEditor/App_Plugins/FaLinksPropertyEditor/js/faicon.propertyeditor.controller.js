@@ -93,8 +93,6 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
                 $scope.faIconForm.maxCount.$setValidity("maxCount", true);
             }
             vm.sortableOptions.disabled = $scope.model.value.length === 1;
-            if ($scope.model.value.length === 1) {
-            }
         }
     );
 

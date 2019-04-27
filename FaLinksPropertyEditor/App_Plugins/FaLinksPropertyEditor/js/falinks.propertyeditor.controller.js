@@ -32,14 +32,15 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         $scope.model.value.splice($index, 1);
     }
 
-    $scope.sortableOptions = {
+    let sortableOptions = {
         distance: 10,
         tolerance: 'pointer',
         opacity: 0.7,
         scroll: true,
         cursor: 'move',
-        handle: ".list-view-layout__sort-handle"
+        handle: "> .list-view-falink__sort-handle"
     };
+    vm.sortableOptions = sortableOptions;
 
     // Icon Picker
     if (!$scope.model.value) {
@@ -175,7 +176,7 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
             else {
                 $scope.faLinksForm.maxCount.$setValidity("maxCount", true);
             }
-            $scope.sortableOptions.disabled = $scope.model.value.length === 1;
+           vm.sortableOptions.disabled = $scope.model.value.length === 1;
         }
     );
 
