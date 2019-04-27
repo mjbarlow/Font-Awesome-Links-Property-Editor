@@ -1,25 +1,23 @@
 ﻿using Newtonsoft.Json;
+using Umbraco.Core;
 
 namespace FaLinksPropertyEditor.Models
 {
-    public partial class FaLinkDto
+    public partial class LinkDto
     {
-        [JsonProperty("primaryClass")]
-        public string PrimaryClass { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-        [JsonProperty("secondaryClass")]
-        public string SecondaryClass { get; set; }
+        [JsonProperty("target")]
+        public string Target { get; set; }
 
-        [JsonProperty("className")]
-        public string ClassName { get; set; }
+        [JsonProperty("udi")]
+        public GuidUdi Udi { get; set; }
 
-        [JsonProperty("svg")]
-        public string Svg { get; set; }
+        [JsonProperty("url")]
+        public string Url { get; set; }
 
-        [JsonProperty("label")]
-        public string Label { get; set; }
-
-        [JsonProperty("link")]
-        public LinkDto[] Link { get; set; }
+        [JsonProperty("queryString")]
+        public string QueryString { get; set; }
     }
 }

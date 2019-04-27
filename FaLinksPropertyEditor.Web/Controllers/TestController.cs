@@ -11,8 +11,13 @@ namespace FaLinksPropertyEditor.Web.Controllers
         public override ActionResult Index(ContentModel model)
         {
             // Do some stuff here, the return the base Index method
-            var test = model.Content.Value<string>("testProperty");
-            var test1 = model.Content.Value<IEnumerable<FaLink>>("testProperty");
+            var iconSingle = model.Content.Value<FaIcon>("iconSingle");
+            var iconMultiple = model.Content.Value<IEnumerable<FaIcon>>("iconMultiple");
+
+            var linkSingle = model.Content.Value<FaLink>("linkSingle");
+            var linkMultiple = model.Content.Value<IEnumerable<FaLink>>("linkMultiple");
+
+
 
             return base.Index(model);
         }

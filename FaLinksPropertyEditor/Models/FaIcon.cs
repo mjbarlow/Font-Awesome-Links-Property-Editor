@@ -2,14 +2,8 @@
 
 namespace FaLinksPropertyEditor.Models
 {
-    public partial class FaLinkDto
+    public partial class FaIcon
     {
-        [JsonProperty("primaryClass")]
-        public string PrimaryClass { get; set; }
-
-        [JsonProperty("secondaryClass")]
-        public string SecondaryClass { get; set; }
-
         [JsonProperty("className")]
         public string ClassName { get; set; }
 
@@ -18,8 +12,5 @@ namespace FaLinksPropertyEditor.Models
 
         [JsonProperty("label")]
         public string Label { get; set; }
-
-        [JsonProperty("link")]
-        public LinkDto[] Link { get; set; }
     }
 }

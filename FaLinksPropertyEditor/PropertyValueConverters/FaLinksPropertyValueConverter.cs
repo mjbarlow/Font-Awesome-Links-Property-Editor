@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FaLinksPropertyEditor.Configuration;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 using Umbraco.Web.Models;
@@ -38,7 +37,7 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         /// <param name="propertyType">The property type.</param>
         /// <returns>The CLR type of values returned by the converter.</returns>
         public override Type GetPropertyValueType(PublishedPropertyType propertyType)
-            => propertyType.DataType.ConfigurationAs<FaLinksConfiguration>().MaxNumber == 1 ?
+            => GetMaxNumber(propertyType.DataType.Configuration) == 1 ?
                 typeof(FaLink) :
                 typeof(IEnumerable<FaLink>);
 
@@ -53,10 +52,10 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         public override object ConvertIntermediateToObject(IPublishedElement owner, PublishedPropertyType propertyType,
             PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
         {
-            var maxNumber = propertyType.DataType.ConfigurationAs<FaLinksConfiguration>().MaxNumber;
+            var maxNumber = GetMaxNumber(propertyType.DataType.Configuration);
             if (inter == null)
             {
-                return maxNumber == 1 ? null : Enumerable.Empty<Link>();
+                return maxNumber == 1 ? null : Enumerable.Empty<FaLink>();
             }
             var faLinks = new List<FaLink>();
             var faLinkDtos = JsonConvert.DeserializeObject<IEnumerable<FaLinkDto>>(inter.ToString()).ToList();
@@ -103,6 +102,18 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
             if (maxNumber == 1) return faLinks.FirstOrDefault();
             if (maxNumber > 0) return faLinks.Take(maxNumber);
             return faLinks;
+        }
+
+        private int GetMaxNumber(object configuration)
+        {
+            var json = JsonConvert.SerializeObject(configuration);
+            var maxNumber = 0;
+            var config = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+            if (config.ContainsKey("maxNumber"))
+            {
+                int.TryParse(config["maxNumber"].ToString(), out maxNumber);
+            }
+            return maxNumber;
         }
     }
 }
