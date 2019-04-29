@@ -12,8 +12,6 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
 {
     class FaIconPropertyValueConverter : PropertyValueConverterBase
     {
-        private readonly IPublishedSnapshotAccessor _publishedSnapshotAccessor;
-        
         /// <summary>
         /// Gets a value indicating whether the converter supports a property type.
         /// </summary>
