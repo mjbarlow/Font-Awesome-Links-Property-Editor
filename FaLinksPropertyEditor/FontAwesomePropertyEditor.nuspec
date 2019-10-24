@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>FontAwesomePropertyEditor</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>Font Awesome Property Editor</title>
     <authors>Matt Barlow</authors>
     <owners>Matt Barlow</owners>
@@ -12,10 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Font Awesome links / icons property editor for Umbraco.</description>
     <releaseNotes>
-      - fixed draggable ui
-      - added FaIcon model
-      - added helper messages
-      - added validation
+      - Umbraco 8.2+ compatible.
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Umbraco Property Editor Media Font Awesome Icons Search</tags>
