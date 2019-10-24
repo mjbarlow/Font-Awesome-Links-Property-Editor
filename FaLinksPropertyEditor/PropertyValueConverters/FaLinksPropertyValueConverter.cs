@@ -27,7 +27,7 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         /// </summary>
         /// <param name="propertyType">The property type.</param>
         /// <returns>A value indicating whether the converter supports a property type.</returns>
-        public override bool IsConverter(PublishedPropertyType propertyType) =>
+        public override bool IsConverter(IPublishedPropertyType propertyType) =>
             (propertyType.EditorAlias).Equals("FaLinksPropertyEditor");
 
 
@@ -36,20 +36,20 @@ namespace FaLinksPropertyEditor.PropertyValueConverters
         /// </summary>
         /// <param name="propertyType">The property type.</param>
         /// <returns>The CLR type of values returned by the converter.</returns>
-        public override Type GetPropertyValueType(PublishedPropertyType propertyType)
+        public override Type GetPropertyValueType(IPublishedPropertyType propertyType)
             => GetMaxNumber(propertyType.DataType.Configuration) == 1 ?
                 typeof(FaLink) :
                 typeof(IEnumerable<FaLink>);
 
-        public override PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType) =>
+        public override PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType) =>
             PropertyCacheLevel.Snapshot;
 
         public override bool? IsValue(object value, PropertyValueLevel level) => value?.ToString() != "[]";
 
-        public override object ConvertSourceToIntermediate(IPublishedElement owner, PublishedPropertyType propertyType,
+        public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType,
             object source, bool preview) => source?.ToString();
 
-        public override object ConvertIntermediateToObject(IPublishedElement owner, PublishedPropertyType propertyType,
+        public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType,
             PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
         {
             var maxNumber = GetMaxNumber(propertyType.DataType.Configuration);
