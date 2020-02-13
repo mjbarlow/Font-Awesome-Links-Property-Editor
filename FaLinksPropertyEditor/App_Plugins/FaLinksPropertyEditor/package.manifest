@@ -67,8 +67,8 @@
 		{
 			"alias": "FaIconButtonsPropertyEditor",
 			"name": "Font Awesome Icon Buttons",
-			"icon": "icon-colorpicker",
-			"group": "pickers",
+			"icon": "icon-checkbox-empty",
+			"group": "lists",
 			"editor": {
 				"valueType": "TEXT",
 				"view": "~/App_Plugins/FaLinksPropertyEditor/faiconbuttons.propertyeditor.html"
