@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>FontAwesomePropertyEditor</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>Font Awesome Property Editor</title>
     <authors>Matt Barlow</authors>
     <owners>Matt Barlow</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor</projectUrl>
     <iconUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor/blob/master/FaLinksPropertyEditor/images/logo.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Font Awesome links / icons property editor for Umbraco.</description>
+    <description>Font Awesome links / icons / buttons property editor for Umbraco.</description>
     <releaseNotes>
       - Umbraco 8.2+ compatible.
     </releaseNotes>

@@ -1,19 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using FaLinksPropertyEditor.PropertyValueConverters
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedModels.Test>
 
 @{
     Layout = null;
-
-    var falinks = Model.Value<IEnumerable<FaLink>>("testProperty");
 }
 
 @* the fun starts here *@
-
-@foreach (var x in falinks)
-{
-<div style="width:50px;">@Html.Raw(x.Svg)</div>;
-    <a href="@x.Link.Url" target="@x.Link.Target" class="@x.PrimaryClass @x.SecondaryClass">Link</a>
-
-
-}
-
+@{ 
+   
+        }

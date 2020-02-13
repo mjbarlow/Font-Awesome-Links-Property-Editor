@@ -13,7 +13,7 @@
                 <div ng-show="item.svg" class="list-view-falink__icon-view list-view-falink__icon-view-wide">
                     <div class="-full-width-input">
                         <a ng-click="addIcon(item)" href="" prevent-default>
-                            <i class="" ng-bind-html="trustAsHtml(item.svg)"></i>
+                            <i ng-bind-html="trustAsHtml(item.svg)"></i>
                             <label ng-bind="item.className"></label>
                         </a>
                         <a class="umb-node-preview__action" title="Remove" ng-click="removeIcon(item)">

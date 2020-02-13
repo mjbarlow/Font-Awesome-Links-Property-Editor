@@ -241,13 +241,18 @@
     <Compile Include="Models\FaLinkDto.cs" />
     <Compile Include="Models\LinkDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyValueConverters\FaIconButtonPropertyValueConverter.cs" />
     <Compile Include="PropertyValueConverters\FaIconPropertyValueConverter.cs" />
     <Compile Include="PropertyValueConverters\FaLinksPropertyValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faiconbuttons.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faiconbuttons.prevalues.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faiconbuttons.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faiconbuttons.prevalues.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />

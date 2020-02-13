@@ -26,7 +26,7 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
         item.deletePrompt = false;
     }
 
-    function remove($index, item) {
+    function remove($index) {
         $scope.model.value.splice($index, 1);
     }
 
