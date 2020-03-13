@@ -1,23 +1,23 @@
 ﻿
 function faIconButtonsPropertyEditorController($scope, $sce) {
-   var vm = this;
-   vm.showLabel = false;
-   vm.allowMultiple = false; 
-   vm.buttons = [];
+    var vm = this;
+    vm.showLabel = false;
+    vm.allowMultiple = false;
+    vm.buttons = [];
 
-    vm.setClasses = function (value) {
-        var index = $scope.model.value.indexOf(value);
+    vm.setClasses = function (item) {
+        var index = $scope.model.value.indexOf(item.value);
 
         let classes = {
             'btn-selection': index !== -1,
             'btn-info': index === -1,
-            'btn-wide': vm.showLabel
+            'btn-wide': vm.showLabel && item.svg.length > 0
         };
         return classes;
     };
 
     vm.add = function (value) {
- 
+
         var index = $scope.model.value.indexOf(value);
 
         if (vm.allowMultiple) {
@@ -28,7 +28,7 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
             } else {
                 $scope.model.value.push(value);
             }
-        } else {    
+        } else {
 
             $scope.model.value = [];
 
@@ -41,7 +41,7 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
     $scope.trustAsHtml = $sce.trustAsHtml;
 
     vm.init = function () {
-        if ($scope.model.config && $scope.model.config.faIconButtons){
+        if ($scope.model.config && $scope.model.config.faIconButtons) {
             vm.buttons = $scope.model.config.faIconButtons;
         }
         if ($scope.model.config && $scope.model.config.showLabel) {
