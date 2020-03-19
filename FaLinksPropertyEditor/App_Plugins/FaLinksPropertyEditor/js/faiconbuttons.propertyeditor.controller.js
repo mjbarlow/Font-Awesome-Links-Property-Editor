@@ -41,7 +41,7 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
     $scope.trustAsHtml = $sce.trustAsHtml;
 
     vm.init = function () {
-        console.log($scope.model.config);
+      
         if ($scope.model.config && $scope.model.config.faIconButtons) {
             vm.buttons = $scope.model.config.faIconButtons;
         }
