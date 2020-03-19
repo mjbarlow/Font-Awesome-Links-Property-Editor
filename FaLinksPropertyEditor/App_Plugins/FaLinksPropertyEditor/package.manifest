@@ -92,6 +92,12 @@
 						"description": "Allow multiple buttons to be selected.",
 						"key": "allowMultiple",
 						"view": "boolean"
+					},
+					{
+						"label": "Default value",
+						"description": "Set the default selected value",
+						"key": "defaultValue",
+						"view": "textstring"
 					}
 				]
 			},

@@ -41,6 +41,7 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
     $scope.trustAsHtml = $sce.trustAsHtml;
 
     vm.init = function () {
+        console.log($scope.model.config);
         if ($scope.model.config && $scope.model.config.faIconButtons) {
             vm.buttons = $scope.model.config.faIconButtons;
         }
@@ -54,7 +55,11 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
 
     if (!$scope.model.value) {
         $scope.model.value = [];
+        if ($scope.model.config && $scope.model.config.defaultValue) {
+            $scope.model.value.push($scope.model.config.defaultValue);
+        }
     }
+    
 
     vm.init();
 }

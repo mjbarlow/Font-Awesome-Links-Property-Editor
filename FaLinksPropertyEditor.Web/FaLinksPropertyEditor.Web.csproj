@@ -406,11 +406,13 @@
   <ItemGroup>
     <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faiconbuttons.prevalues.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\faiconbuttons.propertyeditor.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.propertyeditor.html" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faiconbuttons.prevalues.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\faiconbuttons.propertyeditor.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.picker.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
