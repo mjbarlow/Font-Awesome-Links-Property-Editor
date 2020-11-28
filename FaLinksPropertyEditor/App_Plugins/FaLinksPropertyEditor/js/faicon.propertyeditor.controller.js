@@ -1,16 +1,13 @@
 ﻿
 function faIconPropertyEditorController($scope, editorService, $sce) {
     var vm = this;
-
     vm.add = add;
     vm.showPrompt = showPrompt;
     vm.hidePrompt = hidePrompt;
     vm.remove = remove;
 
-
-    // FaLink Row Functions
     function add() {
-        var item = {
+        const  item = {
             "className": "",
             "svg": "",
             "label": ""
@@ -30,24 +27,24 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
         $scope.model.value.splice($index, 1);
     }
 
-    let sortableOptions = {
+    const sortableOptions = {
         distance: 10,
-        tolerance: 'pointer',
+        tolerance: "pointer",
         opacity: 0.7,
         scroll: true,
-        cursor: 'move',
-        handle: '> .list-view-falink__sort-handle'
+        cursor: "move",
+        handle: "> .list-view-falink__sort-handle"
     };
+
     vm.sortableOptions = sortableOptions;
 
-    // Icon Picker
     if (!$scope.model.value) {
         $scope.model.value = [];
         vm.add();
     }
 
     $scope.addIcon = function (item) {
-        var faPicker = {
+        const faPicker = {
             title: "Font Awesome Icon Search",
             view: "/App_Plugins/FaLinksPropertyEditor/faLinks.picker.html",
             size: "small",
@@ -70,7 +67,6 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
         item.label = "";
     };
 
-    // Render svg
     $scope.trustAsHtml = $sce.trustAsHtml;
 
     $scope.$watch(
@@ -97,4 +93,4 @@ function faIconPropertyEditorController($scope, editorService, $sce) {
     );
 
 }
-angular.module('umbraco').controller("FaIcon.PropertyEditor.Controller", faIconPropertyEditorController);
+angular.module("umbraco").controller("FaIcon.PropertyEditor.Controller", faIconPropertyEditorController);

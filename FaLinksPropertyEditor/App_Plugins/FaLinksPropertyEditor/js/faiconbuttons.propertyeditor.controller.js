@@ -1,14 +1,13 @@
-﻿
-function faIconButtonsPropertyEditorController($scope, $sce) {
+﻿function faIconButtonsPropertyEditorController($scope, $sce) {
     var vm = this;
     vm.showLabel = false;
     vm.allowMultiple = false;
     vm.buttons = [];
 
     vm.setClasses = function (item) {
-        var index = $scope.model.value.indexOf(item.value);
+        const index = $scope.model.value.indexOf(item.value);
 
-        let classes = {
+        const classes = {
             'btn-selection': index !== -1,
             'btn-info': index === -1,
             'btn-wide': vm.showLabel && item.svg.length > 0
@@ -17,8 +16,7 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
     };
 
     vm.add = function (value) {
-
-        var index = $scope.model.value.indexOf(value);
+        const index = $scope.model.value.indexOf(value);
 
         if (vm.allowMultiple) {
 
@@ -60,7 +58,6 @@ function faIconButtonsPropertyEditorController($scope, $sce) {
         }
     }
     
-
     vm.init();
 }
-angular.module('umbraco').controller("FaIconButtons.PropertyEditor.Controller", faIconButtonsPropertyEditorController);
+angular.module("umbraco").controller("FaIconButtons.PropertyEditor.Controller", faIconButtonsPropertyEditorController);

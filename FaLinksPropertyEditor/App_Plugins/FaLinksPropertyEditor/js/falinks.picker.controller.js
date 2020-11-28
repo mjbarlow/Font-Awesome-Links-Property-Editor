@@ -1,5 +1,5 @@
 ﻿function faLinksPickerController($scope, $http, $element, $sce) {
-    const iconsDataUrl = '/App_Plugins/FaLinksPropertyEditor/icons.json';
+    const iconsDataUrl = "/App_Plugins/FaLinksPropertyEditor/icons.json";
 
     const styles = {
         brands: "fab",
@@ -10,7 +10,7 @@
     $scope.model.results = [];
 
     setTimeout(function () {
-        var input = $element[0].querySelector("#falinks-search");
+        const input = $element[0].querySelector("#falinks-search");
         if (input) input.focus();
         $scope.load();
     }, 20);
@@ -37,7 +37,7 @@
            function (icon, iconKey) {
                angular.forEach(icon.svg,
                    function(iconCat, iconCatKey) {
-                       var item = {
+                       const item = {
                            label: icon.label,
                            svg: iconCat.raw,
                            terms: icon.search.terms,
@@ -52,15 +52,15 @@
     $scope.trustAsHtml = $sce.trustAsHtml;
 
     $scope.load = function() {
-        if ($scope.model.search === '') {
+        if ($scope.model.search === "") {
             return;
         }
         $scope.model.loading = true;    
         $http({
-            method: 'GET',
+            method: "GET",
             url: iconsDataUrl,
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
             }
         }).then(function (response) {
             if (response !== null && response !== undefined && response.data !== undefined) {
@@ -73,4 +73,4 @@
         });
     };
 }
-angular.module('umbraco').controller("FaLinks.Picker.Controller", faLinksPickerController);
+angular.module("umbraco").controller("FaLinks.Picker.Controller", faLinksPickerController);

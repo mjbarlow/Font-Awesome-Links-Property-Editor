@@ -7,9 +7,8 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
     vm.hidePrompt = hidePrompt;
     vm.remove = remove;
 
-    // FaLink Row Functions
     function add() {
-        var item = {
+        const item = {
             "primaryClass": "",
             "secondaryClass": "",
             "className": "",
@@ -32,24 +31,24 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         $scope.model.value.splice($index, 1);
     }
 
-    let sortableOptions = {
+    const sortableOptions = {
         distance: 10,
-        tolerance: 'pointer',
+        tolerance: "pointer",
         opacity: 0.7,
         scroll: true,
-        cursor: 'move',
+        cursor: "move",
         handle: "> .list-view-falink__sort-handle"
     };
     vm.sortableOptions = sortableOptions;
 
-    // Icon Picker
+
     if (!$scope.model.value) {
         $scope.model.value = [];
         vm.add();
     }
 
     $scope.addIcon = function (item) {
-        var faPicker = {
+        const faPicker = {
             title: "Font Awesome Icon Search",
             view: "/App_Plugins/FaLinksPropertyEditor/faLinks.picker.html",
             size: "small",
@@ -72,10 +71,8 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         item.label = "";
     };
 
-    // Render svg
     $scope.trustAsHtml = $sce.trustAsHtml;
 
-    // Multi Url Link Picker
     var currentForm = angularHelper.getCurrentForm($scope);
 
     $scope.model.value.forEach(function (item) {
@@ -85,7 +82,7 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
     $scope.openLinkPicker = function (item, link) {
 
         // pass in the link set to target
-        var target = link ? {
+        const target = link ? {
             name: link.name,
             anchor: link.queryString,
             udi: link.isMedia ? null : link.udi,
@@ -93,7 +90,7 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
             target: link.target
         } : null;
 
-        var linkPicker = {
+        const linkPicker = {
             // could be link or null
             currentTarget: target,
             submit: function (model) {
@@ -133,7 +130,10 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
 
                         entityResource.getById(link.udi, entityType).then(function (data) {
                             link.icon = iconHelper.convertFromLegacyIcon(data.icon);
-                            link.published = (data.metaData && data.metaData.IsPublished === false && entityType === "Document") ? false : true;
+                            link.published =
+                                (data.metaData && data.metaData.IsPublished === false && entityType === "Document")
+                                ? false
+                                : true;
                             link.trashed = data.trashed;
                             if (link.trashed) {
                                 item.url = localizationService.dictionary.general_recycleBin;
@@ -154,8 +154,6 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         };
         editorService.linkPicker(linkPicker);
     };
-
-    // Validation
 
     $scope.$watch(
         function () {
@@ -180,10 +178,8 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         }
     );
 
-
-
     $scope.removeLink = function (item) {
         item.link = [];
     };
 }
-angular.module('umbraco').controller("FaLinks.PropertyEditor.Controller", faLinksPropertyEditorController);
+angular.module("umbraco").controller("FaLinks.PropertyEditor.Controller", faLinksPropertyEditorController);

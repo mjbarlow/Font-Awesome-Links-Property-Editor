@@ -1,22 +1,22 @@
 ﻿function faLinkPrevaluesController($scope) {
-   var vm = this;
+   const vm = this;
 
    vm.sortableOptions = {
         distance: 10,
-        tolerance: 'pointer',
+        tolerance: "pointer",
         opacity: 0.7,
         scroll: true,
-        cursor: 'move',
+        cursor: "move",
         handle: ".list-view-layout__sort-handle"
     };
 
    vm.add = function() {
-        var item = {
-            name: '',
-            value: ''
-        };
-        $scope.model.value.push(item);
-    };
+       const item = {
+           name: "",
+           value: ""
+       };
+       $scope.model.value.push(item);
+   };
 
    vm.showPrompt = function(item) {
         item.deletePrompt = true;
@@ -35,4 +35,4 @@
         
     }
 }
-angular.module('umbraco').controller("FaLinks.Prevalues.Controller", faLinkPrevaluesController);
+angular.module("umbraco").controller("FaLinks.Prevalues.Controller", faLinkPrevaluesController);

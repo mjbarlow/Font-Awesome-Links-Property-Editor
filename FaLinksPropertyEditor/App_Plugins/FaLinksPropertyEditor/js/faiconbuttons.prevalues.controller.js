@@ -1,23 +1,23 @@
 ﻿function faIconButtonsPrevaluesController($scope, editorService, $sce) {
-   var vm = this;
+   const vm = this;
 
    vm.sortableOptions = {
         distance: 10,
-        tolerance: 'pointer',
+        tolerance: "pointer",
         opacity: 0.7,
         scroll: true,
-        cursor: 'move',
+        cursor: "move",
         handle: ".list-view-layout__sort-handle"
     };
 
    vm.add = function() {
-        var item = {
-            label: '',
-            value: '',
-            svg: ''
-        };
-        $scope.model.value.push(item);
-    };
+       const item = {
+           label: "",
+           value: "",
+           svg: ""
+       };
+       $scope.model.value.push(item);
+   };
 
    vm.showPrompt = function(item) {
         item.deletePrompt = true;
@@ -31,12 +31,16 @@
         $scope.model.value.splice($index, 1);
     };
 
+    vm.removeIcon = function (item) {
+        item.svg = "";
+   };
+
    if (!$scope.model.value) {
         $scope.model.value = [];
-    }
+   };
 
     $scope.addIcon = function (item) {
-        var faPicker = {
+        const faPicker = {
             title: "Font Awesome Icon Search",
             view: "/App_Plugins/FaLinksPropertyEditor/faLinks.picker.html",
             size: "small",
@@ -51,12 +55,6 @@
         editorService.open(faPicker);
     };
 
-    // Render svg
     $scope.trustAsHtml = $sce.trustAsHtml;
-
-
-   vm.removeIcon = function (item) {
-        item.svg = "";
-   };
 }
-angular.module('umbraco').controller("FaIconButtons.Prevalues.Controller", faIconButtonsPrevaluesController);
+angular.module("umbraco").controller("FaIconButtons.Prevalues.Controller", faIconButtonsPrevaluesController);
