@@ -2,17 +2,17 @@
 <package >
   <metadata>
     <id>FontAwesomePropertyEditor</id>
-    <version>1.0.4</version>
-    <title>Font Awesome Property Editor</title>
-    <authors>Matt Barlow</authors>
-    <owners>Matt Barlow</owners>
+    <version>1.0.6</version>
+    <title>Font Awesome Property Editor for Umbraco 8</title>
+    <authors>Matt Barlow | Jacker.io</authors>
+    <owners>Matt Barlow | Jacker.io</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor</projectUrl>
     <iconUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor/blob/master/FaLinksPropertyEditor/images/logo.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Font Awesome links / icons / buttons property editor for Umbraco.</description>
     <releaseNotes>
-      - Umbraco 8.2+ compatible.
+      - Umbraco 8.9.1+ compatible.
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Umbraco Property Editor Media Font Awesome Icons Search</tags>

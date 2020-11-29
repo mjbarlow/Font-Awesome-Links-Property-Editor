@@ -266,7 +266,6 @@
     <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
     <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
     <None Include="app.config" />
-    <None Include="FontAwesomePropertyEditor.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
