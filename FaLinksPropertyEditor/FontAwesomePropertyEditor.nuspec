@@ -8,7 +8,7 @@
     <owners>Matt Barlow | Jacker.io</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor</projectUrl>
-    <iconUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor/blob/master/FaLinksPropertyEditor/images/logo.jpg?raw=true</iconUrl>
+    <iconUrl>https://github.com/mjbarlow/Font-Awesome-Links-Property-Editor/blob/master/FaLinksPropertyEditor/images/icon.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Font Awesome links / icons / buttons property editor for Umbraco.</description>
     <releaseNotes>
