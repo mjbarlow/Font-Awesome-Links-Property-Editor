@@ -1,9 +1,9 @@
 # Umbraco 8 Font Awesome links, icons and buttons property editors
 Umbraco V8 Font Awesome Links Property Editor, render multiple links with FA Icons and configurable classes. Render multiple Font Awesome links with configurable classes or icons. 
 
-### Full documentation and usage guide please see the instructions here:
+### Documentation & Guide:
 
-http://jacker.io/tutorials-articles/umbraco-font-awesome-extension-documentation-installation-and-usage-examples/
+[Font Awesome Links Documentation](http://jacker.io/tutorials-articles/umbraco-font-awesome-extension-documentation-installation-and-usage-examples/)
 
 ### Important:
 
