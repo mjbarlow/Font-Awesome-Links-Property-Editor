@@ -1,11 +1,11 @@
-﻿
-function faLinksPropertyEditorController($scope, angularHelper, iconHelper, editorService, entityResource, localizationService, $sce) {
+﻿function faLinksPropertyEditorController($scope, angularHelper, iconHelper, editorService, entityResource, localizationService, $sce) {
     var vm = this;
 
     vm.add = add;
     vm.showPrompt = showPrompt;
     vm.hidePrompt = hidePrompt;
     vm.remove = remove;
+    vm.hideIcon = true;
 
     function add() {
         const item = {
@@ -40,7 +40,6 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         handle: "> .list-view-falink__sort-handle"
     };
     vm.sortableOptions = sortableOptions;
-
 
     if (!$scope.model.value) {
         $scope.model.value = [];
@@ -81,7 +80,6 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
 
     $scope.openLinkPicker = function (item, link) {
 
-        // pass in the link set to target
         const target = link ? {
             name: link.name,
             anchor: link.queryString,
@@ -91,18 +89,17 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
         } : null;
 
         const linkPicker = {
-            // could be link or null
+            
             currentTarget: target,
             submit: function (model) {
                 if (model.target.url || model.target.anchor) {
-                    // if an anchor exists, check that it is appropriately prefixed
-                    if (model.target.anchor && model.target.anchor[0] !== '?' && model.target.anchor[0] !== '#') {
-                        model.target.anchor = (model.target.anchor.indexOf('=') === -1 ? '#' : '?') + model.target.anchor;
+                   
+                    if (model.target.anchor && model.target.anchor[0] !== "?" && model.target.anchor[0] !== "#") {
+                        model.target.anchor = (model.target.anchor.indexOf("=") === -1 ? "#" : "?") + model.target.anchor;
                     }
                     if (link) {
                         if (link.isMedia && link.url === model.target.url) {
-                            // we can assume the existing media item is changed and no new file has been selected
-                            // so we don't need to update the udi and isMedia fields
+         
                         } else {
                             link.udi = model.target.udi;
                             link.isMedia = model.target.isMedia;
@@ -160,7 +157,6 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
             return $scope.model.value.length;
         },
         function () {
-            
             if ($scope.model.config && $scope.model.config.minNumber && parseInt($scope.model.config.minNumber) > $scope.model.value.length) {
                 $scope.faLinksForm.minCount.$setValidity("minCount", false);
             }
@@ -181,5 +177,12 @@ function faLinksPropertyEditorController($scope, angularHelper, iconHelper, edit
     $scope.removeLink = function (item) {
         item.link = [];
     };
+
+    vm.init = function() {
+        if ($scope.model.config && $scope.model.config.hideIconPicker) {
+            vm.hideIcon = $scope.model.config.hideIconPicker;
+        }
+    }
+    vm.init();
 }
 angular.module("umbraco").controller("FaLinks.PropertyEditor.Controller", faLinksPropertyEditorController);

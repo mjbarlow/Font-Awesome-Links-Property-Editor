@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>FontAwesomePropertyEditor</id>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <title>Font Awesome Property Editor for Umbraco 8</title>
     <authors>Matt Barlow | Jacker.io</authors>
     <owners>Matt Barlow | Jacker.io</owners>
