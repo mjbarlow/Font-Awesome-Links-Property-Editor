@@ -193,6 +193,8 @@
         overflow: hidden;
         font-size: 13px;
         margin-top: 0;
+        max-width: 125px;
+        overflow: hidden;
     }
 
     .list-view-falink__link .umb-node-preview__description {

@@ -64,7 +64,7 @@
         editorService.open(faPicker);
     };
 
-    $scope.removeIcon = function(item) {
+    $scope.removeIcon = function (item) {
         item.svg = "";
         item.className = "";
         item.label = "";
@@ -89,17 +89,17 @@
         } : null;
 
         const linkPicker = {
-            
+
             currentTarget: target,
             submit: function (model) {
                 if (model.target.url || model.target.anchor) {
-                   
+
                     if (model.target.anchor && model.target.anchor[0] !== "?" && model.target.anchor[0] !== "#") {
                         model.target.anchor = (model.target.anchor.indexOf("=") === -1 ? "#" : "?") + model.target.anchor;
                     }
                     if (link) {
                         if (link.isMedia && link.url === model.target.url) {
-         
+
                         } else {
                             link.udi = model.target.udi;
                             link.isMedia = model.target.isMedia;
@@ -112,13 +112,13 @@
                     } else {
                         link = {
                             isMedia: model.target.isMedia,
-                            name: model.target.name || model.target.url || model.target.anchor, 
+                            name: model.target.name || model.target.url || model.target.anchor,
                             queryString: model.target.anchor,
                             target: model.target.target,
                             udi: model.target.udi,
                             url: model.target.url
                         };
-                        item.link = []; 
+                        item.link = [];
                         item.link.push(link);
                     }
 
@@ -129,8 +129,8 @@
                             link.icon = iconHelper.convertFromLegacyIcon(data.icon);
                             link.published =
                                 (data.metaData && data.metaData.IsPublished === false && entityType === "Document")
-                                ? false
-                                : true;
+                                    ? false
+                                    : true;
                             link.trashed = data.trashed;
                             if (link.trashed) {
                                 item.url = localizationService.dictionary.general_recycleBin;
@@ -170,7 +170,7 @@
             else {
                 $scope.faLinksForm.maxCount.$setValidity("maxCount", true);
             }
-           vm.sortableOptions.disabled = $scope.model.value.length === 1;
+            vm.sortableOptions.disabled = $scope.model.value.length === 1;
         }
     );
 
@@ -178,7 +178,7 @@
         item.link = [];
     };
 
-    vm.init = function() {
+    vm.init = function () {
         if ($scope.model.config && $scope.model.config.hideIconPicker) {
             vm.hideIcon = $scope.model.config.hideIconPicker;
         }

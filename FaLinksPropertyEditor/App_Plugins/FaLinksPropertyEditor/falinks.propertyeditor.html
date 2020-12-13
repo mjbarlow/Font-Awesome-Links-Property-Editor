@@ -30,7 +30,7 @@
                                               published="link.published"
                                               description="link.url + (link.queryString ? link.queryString : '')"
                                               sortable="false"
-                                              allow-remove="true"
+                                              allow-remove="false"
                                               allow-edit="true"
                                               on-remove="removeLink(item)"
                                               on-edit="openLinkPicker(item, link)">
@@ -46,14 +46,11 @@
                     </div>
                     <div ng-show="model.config.primaryClassItems.length > 0" class="list-view-falink__dropdown">
                         <select name="dropDownList" class="umb-property-editor umb-dropdown -full-width-input" ng-model="item.primaryClass">
-                            <option value="" selected></option>
                             <option ng-repeat="option in model.config.primaryClassItems" ng-value="option.value">{{option.name}}</option>
                         </select>
                     </div>
                     <div ng-show="model.config.secondaryClassItems.length > 0" class="list-view-falink__dropdown">
-                        <select name="dropDownList" class="umb-property-editor umb-dropdown -full-width-input"
-                                ng-model="item.secondaryClass">
-                            <option value="" selected></option>
+                        <select name="dropDownList" class="umb-property-editor umb-dropdown -full-width-input" ng-model="item.secondaryClass">
                             <option ng-repeat="option in model.config.secondaryClassItems" ng-value="option.value">{{option.name}}</option>
                         </select>
                     </div>

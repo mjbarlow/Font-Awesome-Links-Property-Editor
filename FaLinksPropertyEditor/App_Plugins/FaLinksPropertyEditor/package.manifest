@@ -1,49 +1,49 @@
 ﻿{
 	"propertyEditors": [
-	{
-		"alias": "FaLinksPropertyEditor",
-		"name": "Font Awesome Links",
-		"icon": "icon-link",
-		"group": "pickers",
-		"editor": {
-			"valueType": "TEXT",
-			"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.propertyeditor.html"
+		{
+			"alias": "FaLinksPropertyEditor",
+			"name": "Font Awesome Links",
+			"icon": "icon-link",
+			"group": "pickers",
+			"editor": {
+				"valueType": "TEXT",
+				"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.propertyeditor.html"
+			},
+			"prevalues": {
+				"fields": [
+					{
+						"label": "Minimum number of items",
+						"description": "",
+						"key": "minNumber",
+						"view": "number"
+					},
+					{
+						"label": "Maximum number of items",
+						"description": "",
+						"key": "maxNumber",
+						"view": "number"
+					},
+					{
+						"label": "Primary Class Dropdown",
+						"description": "Add key/value pairs for primary class dropdown",
+						"key": "primaryClassItems",
+						"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+					},
+					{
+						"label": "Secondary Class Dropdown",
+						"description": "Add key/value pairs for secondary class dropdown",
+						"key": "secondaryClassItems",
+						"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
+					},
+					{
+						"label": "Hide Icon Picker",
+						"description": "Hide the icon picker",
+						"key": "hideIconPicker",
+						"view": "boolean"
+					}
+				]
+			}
 		},
-		"prevalues": {
-			"fields": [
-				{
-					"label": "Minimum number of items",
-					"description": "",
-					"key": "minNumber",
-					"view": "number"
-				},
-				{
-					"label": "Maximum number of items",
-					"description": "",
-					"key": "maxNumber",
-					"view": "number"
-				},
-				{
-					"label": "Primary Class Dropdown",
-					"description": "Add key/value pairs for primary class dropdown",
-					"key": "primaryClassItems",
-					"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
-				},
-				{
-					"label": "Secondary Class Dropdown",
-					"description": "Add key/value pairs for secondary class dropdown",
-					"key": "secondaryClassItems",
-					"view": "~/App_Plugins/FaLinksPropertyEditor/falinks.prevalues.html"
-				},
-				{
-					"label": "Hide Icon Picker",
-          "description": "Hide the icon picker",
-          "key": "hideIconPicker",
-          "view": "boolean"
-        }
-			]
-		}
-	},
 		{
 			"alias": "FaIconPropertyEditor",
 			"name": "Font Awesome Icon",
