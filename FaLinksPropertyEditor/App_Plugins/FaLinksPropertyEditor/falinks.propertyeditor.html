@@ -5,7 +5,7 @@
                 <div class="list-view-falink list-view-falink-single" ng-repeat="item in model.value">
 
                     <i class="list-view-falink__sort-handle icon-navigation"></i>
-                    <div ng-show="vm.showIcon">
+                    <div ng-hide="vm.hideIcon">
                         <div ng-show="!item.svg" class="list-view-falink__icon-add">
                             <a ng-click="addIcon(item)" href="" class="-full-width-input" prevent-default>
                                 <i class="icon icon-add"></i> Icon
