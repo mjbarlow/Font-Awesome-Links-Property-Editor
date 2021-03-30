@@ -5,7 +5,7 @@
     vm.showPrompt = showPrompt;
     vm.hidePrompt = hidePrompt;
     vm.remove = remove;
-    vm.hideIcon = true;
+    vm.hideIcon = false;
 
     function add() {
         const item = {
@@ -180,7 +180,7 @@
 
     vm.init = function () {
         if ($scope.model.config && $scope.model.config.hideIconPicker) {
-            vm.hideIcon = $scope.model.config.hideIconPicker;
+            vm.hideIcon = $scope.model.config.hideIconPicker == true;
         }
     }
     vm.init();
