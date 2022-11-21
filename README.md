@@ -1,3 +1,9 @@
+# PROJECT IS ARCHIVED
+Check out:
+[SvgIconPropertyEditor](https://github.com/creativesuspects/SvgIconPropertyEditor) for an alternative.
+
+
+
 # Umbraco 8 Font Awesome Icons | Links | Buttons
 Umbraco V8 Font Awesome Links Property Editor, render icons, links and buttons in the Umbraco backoffice.
 
